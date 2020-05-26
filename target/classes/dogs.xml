@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+        http://www.springframework.org/schema/beans     
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/mvc 
+        http://www.springframework.org/schema/mvc/spring-mvc.xsd
+        http://www.springframework.org/schema/context 
+        http://www.springframework.org/schema/context/spring-context.xsd">
+        
+<!--         	Dog dog=new Dog();
+		dog.setColor("white");
+		dog.setName("Tommy");
+		dog.setPrice(132); -->
+    <bean  id="dog"    class="com.model.Dog">
+         <property name="name"  value="Tommy"/>
+         <property name="color"  value="white"/>
+         <property name="price"  value="132"/>
+          <property name="meal"  ref="tmeal"/>
+    </bean>      
+    
+     <bean  id="pdog"    class="com.model.Dog">
+         <property name="name"  value="Jackky"/>
+         <property name="color"  value="yellow"/>
+         <property name="price"  value="200"/>
+    </bean>    
+    
+        <bean  id="tmeal"    class="com.model.Meal">
+         <property name="milk"  value="1 liter"/>
+         <property name="bread"  value="5"/>
+    </bean>    
+        
+        
+  </beans>    
