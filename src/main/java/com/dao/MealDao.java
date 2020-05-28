@@ -4,13 +4,30 @@ import java.sql.Timestamp;
 import java.util.Date;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.stereotype.Repository;
 
 import com.model.Meal;
 
+/**
+ * <bean id="tmealDao" name="www.meal.com,www.yahoo.com"		class="com.dao.MealDao">
+		  <property name="jdbcTemplate"  ref="tjdbcTemplate"/>
+	</bean>
+	
+ * @author nagendra
+ *
+ */
+
+@Repository("tmealDao")
 public class MealDao {
 	
+	//<property name="jdbcTemplate"  ref="tjdbcTemplate"/>
+	
+	@Autowired
+	@Qualifier("tjdbcTemplate")
 	private JdbcTemplate jdbcTemplate;
 
 	public JdbcTemplate getJdbcTemplate() {
